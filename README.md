@@ -29,4 +29,5 @@ Feature:
     - A specific active user can chat with any other active users at the same time
 
 References: 
-    - Example for online chat: https://medium.com/@kent_19698/build-a-real-time-chat-app-from-scratch-using-vue-js-and-c-in-5-minutes-599387bdccbb
+- Example for online chat: https://medium.com/@kent_19698/build-a-real-time-chat-app-from-scratch-using-vue-js-and-c-in-5-minutes-599387bdccbb
+- Front-end example: https://www.figma.com/file/VbZ2ugRJDVCR44Kgterr3B/Figma-Admin-Dashboard-UI-Kit-(Community)?node-id=0%3A1
