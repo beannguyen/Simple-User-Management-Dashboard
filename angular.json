@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "simple-user-management-dashboard": {
+    "user-management": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/simple-user-management-dashboard",
+            "outputPath": "dist/user-management",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "simple-user-management-dashboard:build"
+            "browserTarget": "user-management:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "simple-user-management-dashboard:build:production"
+              "browserTarget": "user-management:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simple-user-management-dashboard:build"
+            "browserTarget": "user-management:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "simple-user-management-dashboard:serve"
+            "devServerTarget": "user-management:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "simple-user-management-dashboard:serve:production"
+              "devServerTarget": "user-management:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "simple-user-management-dashboard"
+  "defaultProject": "user-management"
 }
