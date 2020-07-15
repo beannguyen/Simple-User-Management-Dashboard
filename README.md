@@ -1,33 +1,27 @@
-Project: Simple-User-Management-Dashboard (https://github.com/beannguyen/Simple-User-Management-Dashboard)
+# UserManagement
 
-Description:
-- This project is divided from big project called Simple-User-Management
-- This project focuses on Front-End (Javascript - AngularJs)
-- Back-End of big project can be refered from https://github.com/beannguyen/Simple-User-Management-API
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
-Feature:
-- Build a website with several features below
-- Login/Signup page:
-    - Login by username/password
-    - Signup with Google account (required account verify) / Social network account (FB, TW, ...)
-    - Forgot password (reset through email or contact admin)
-- User profile page
-    - Show all information of current active user (First name, Last name, Birthday, Gender, Address, Email, connected social network account)
-    - Allow user to edit/update information
-- Search other users by name (both first/last name, email, username (if existed))
-- User management page (for admin role/system users)
-    - Add/delete/edit users
-    - Group management (admin/mod/system/normal users)
-    - Allow method for superuser to classify group for users:
-        - Normal user: view other users' information, edit current information
-        - Moderator user: has all of normal user's right and bonus add/delete/edit all normal users
-        - Administrator user: has all of moderator user's right and bonus add/delete/edit all moderator users, upgrade role of normal users to moderator ones
-        - System user (superuser): has all of administrator user's right and bonus add/delete/edit all users in any roles, upgrade role of any users not superusers
-- Page/pop-up for online chat (should have UI as FB messenger)
-    - If a user visits others' profile page and those users are online, there should be chat icon in their profile pages
-    - In user management page, each row of online user should also have chat icon
-    - A specific active user can chat with any other active users at the same time
+## Development server
 
-References: 
-- Example for online chat: https://medium.com/@kent_19698/build-a-real-time-chat-app-from-scratch-using-vue-js-and-c-in-5-minutes-599387bdccbb
-- Front-end example: https://www.figma.com/file/VbZ2ugRJDVCR44Kgterr3B/Figma-Admin-Dashboard-UI-Kit-(Community)?node-id=0%3A1
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
