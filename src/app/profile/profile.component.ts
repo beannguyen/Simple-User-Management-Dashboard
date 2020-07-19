@@ -13,10 +13,12 @@ export class ProfileComponent implements OnInit {
 
   demoUser: User = {
     username: 'Vinh Phuc',
+    location: 'Helsinki, Finland',
     email: 'phuc@ynwa.com',
-    age: 24,
+    website: 'thvphuc246.github.io',
+    birthday: '30.04.1975',
     image: '../assets/demo_profile.jpg',
-    roles: "Developer"
+    roles: "Android Developer"
   };
 
   constructor(private token: TokenStorageService) { }
@@ -30,8 +32,10 @@ export class ProfileComponent implements OnInit {
 
 export class User {
   username: string;
+  location: string;
   email: string;
-  age: number;
+  website: string;
+  birthday: string;
   image: string;
   roles: string;
   constructor() {}
