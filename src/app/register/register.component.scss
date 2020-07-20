@@ -1,0 +1,15 @@
+@import 'variables', 'hover', 'shadows', 'buttons', 'functions', 'gradients';
+
+.bg-register-image {
+    background: url("../../assets/register_bg.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .btn-google {
+    @include button-variant($brand-google, $white);
+  }
+  
+  .btn-facebook {
+    @include button-variant($brand-facebook, $white);
+  }
