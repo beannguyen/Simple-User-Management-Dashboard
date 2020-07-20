@@ -1,0 +1,264 @@
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                                true !default;
+$enable-rounded:                              true !default;
+$enable-shadows:                              false !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+
+// Color Variables
+// Bootstrap Color Overrides
+
+$white: #fff !default;
+$gray-100: #f8f9fc !default;
+$gray-200: #eaecf4 !default;
+$gray-300: #dddfeb !default;
+$gray-400: #d1d3e2 !default;
+$gray-500: #b7b9cc !default;
+$gray-600: #858796 !default;
+$gray-700: #6e707e !default;
+$gray-800: #5a5c69 !default;
+$gray-900: #3a3b45 !default;
+$black: #000 !default;
+
+$blue: #4e73df !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #e74a3b !default;
+$orange: #fd7e14 !default;
+$yellow: #f6c23e !default;
+$green: #1cc88a !default;
+$teal: #20c9a6 !default;
+$cyan: #36b9cc !default;
+
+// Custom Colors
+$brand-google: #ea4335 !default;
+$brand-facebook: #3b5998 !default;
+
+// Color contrast
+@function color-yiq($color, $dark: $black, $light: $white) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+  
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+  
+    @if ($yiq >= 150) {
+      @return $dark;
+    } @else {
+      @return $light;
+    }
+  }
+
+// Gradients
+
+@mixin gradient-bg($color) {
+    background-color: $color;
+}
+
+//hover
+@mixin hover() {
+    &:hover { @content; }
+  }
+  
+  @mixin hover-focus() {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+  
+  @mixin plain-hover-focus() {
+    &,
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+  
+  @mixin hover-focus-active() {
+    &:hover,
+    &:focus,
+    &:active {
+      @content;
+    }
+  }
+
+//Box shadows
+@mixin box-shadow($shadow...) {
+    $result: ();
+
+    @if (length($shadow) == 1) {
+      // We can pass `@include box-shadow(none);`
+      $result: $shadow;
+    } @else {
+      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+      @for $i from 1 through length($shadow) {
+        @if nth($shadow, $i) != "none" {
+          $result: append($result, nth($shadow, $i), "comma");
+        }
+      }
+    }
+    @if (length($result) > 0) {
+      box-shadow: $result;
+    }
+}
+
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+    color: color-yiq($background);
+    @include gradient-bg($background);
+    border-color: $border;
+    @include box-shadow($btn-box-shadow);
+  
+    @include hover() {
+      color: color-yiq($hover-background);
+      @include gradient-bg($hover-background);
+      border-color: $hover-border;
+    }
+  
+    &:focus,
+    &.focus {
+      color: color-yiq($hover-background);
+      @include gradient-bg($hover-background);
+      border-color: $hover-border;
+      @include box-shadow($btn-box-shadow, 0 0 0 .2rem rgba(mix(color-yiq($background), $border, 15%), .5));
+    }
+  
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      color: color-yiq($background);
+      background-color: $background;
+      border-color: $border;
+      // Remove CSS gradients if they're enabled
+      @if $enable-gradients {
+        background-image: none;
+      }
+    }
+  
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      color: color-yiq($active-background);
+      background-color: $active-background;
+      @if $enable-gradients {
+        background-image: none; // Remove the gradient for the pressed/active state
+      }
+      border-color: $active-border;
+  
+      &:focus {
+        @if $enable-shadows and $btn-active-box-shadow != none {
+          @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+        } @else {
+          // Avoid using mixin so we can pass custom focus shadow properly
+          box-shadow: 0 0 0 .2rem rgba(mix(color-yiq($background), $border, 15%), .5);
+        }
+      }
+    }
+  }
+  
+  @mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+    color: $color;
+    border-color: $color;
+  
+    @include hover() {
+      color: $color-hover;
+      background-color: $active-background;
+      border-color: $active-border;
+    }
+  
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+    }
+  
+    &.disabled,
+    &:disabled {
+      color: $color;
+      background-color: transparent;
+    }
+  
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      color: color-yiq($active-background);
+      background-color: $active-background;
+      border-color: $active-border;
+  
+      &:focus {
+        @if $enable-shadows and $btn-active-box-shadow != none {
+          @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5));
+        } @else {
+          // Avoid using mixin so we can pass custom focus shadow properly
+          box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+        }
+      }
+    }
+  }
+  
+  // Button sizes
+  @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+    padding: $padding-y $padding-x;
+    @include font-size($font-size);
+    line-height: $line-height;
+    // Manually declare to provide an override to the browser default
+    @include border-radius($border-radius, 0);
+  }
+
+.bg-login-image {
+    background: url("https://3.bp.blogspot.com/-mQ_EgnD4mc8/Ws4R6kQrjCI/AAAAAAAAAco/2pSc4f5G9uMNEGrgm6lU2BGuo7XrTux-gCLcBGAs/s1600/mo%2Bsalah%2Begypt.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .bg-register-image {
+    background: url("../../assets/demo_profile.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .bg-password-image {
+    background: url("../../assets/demo_profile.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  form.user {
+  
+    .custom-checkbox.small {
+      label {
+        line-height: 1.5rem;
+      }
+    }
+  
+    .form-control-user {
+      font-size: 0.8rem;
+      border-radius: 10rem;
+      padding: 1.5rem 1rem;
+    }
+  
+    .btn-user {
+      font-size: 0.8rem;
+      border-radius: 10rem;
+      padding: 0.75rem 1rem;
+    }
+  
+  }
+  
+  .btn-google {
+    @include button-variant($brand-google, $white);
+  }
+  
+  .btn-facebook {
+    @include button-variant($brand-facebook, $white);
+  }
