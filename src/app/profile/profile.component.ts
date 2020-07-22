@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../_services/token-storage.service';
+import { User } from '../_models/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -28,15 +29,4 @@ export class ProfileComponent implements OnInit {
     this.currentUser = this.demoUser;
   }
 
-}
-
-export class User {
-  username: string;
-  location: string;
-  email: string;
-  website: string;
-  birthday: string;
-  image: string;
-  roles: string;
-  constructor() {}
 }
