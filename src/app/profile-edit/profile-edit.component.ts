@@ -17,6 +17,9 @@ export class ProfileEditComponent implements OnInit {
     company: new FormControl(this.token.getUser().company),
     email: new FormControl(this.token.getUser().email),
     roles: new FormControl(this.token.getUser().roles),
+    website: new FormControl(this.token.getUser().website),
+    birthday: new FormControl(this.token.getUser().birthday),
+    image: new FormControl(this.token.getUser().image)
   });
 
   constructor(private token: TokenStorageService) { }
@@ -26,7 +29,8 @@ export class ProfileEditComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    console.log(this.profileForm.value);
+    this.token.saveUser(this.profileForm.value);
   }
 
 }
