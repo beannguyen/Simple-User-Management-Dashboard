@@ -13,9 +13,14 @@
                         <p>
                             <i class="glyphicon glyphicon-envelope"></i>{{ currentUser.email }}
                             <br />
+                            <i class="glyphicon glyphicon-briefcase"></i>{{ currentUser.company }}
+                            <br />
                             <i class="glyphicon glyphicon-globe"></i><a href="http://{{ currentUser.website }}">{{ currentUser.website }}</a>
                             <br />
-                            <i class="glyphicon glyphicon-gift"></i>{{ currentUser.birthday }}</p>
+                            <i class="glyphicon glyphicon-gift"></i>{{ currentUser.birthday }}
+                            <br />
+                            <i class="glyphicon glyphicon-user"></i>{{ currentUser.roles }}
+                        </p>
                         <!-- Split button -->
                         <!-- <div class="btn-group">
                             <button type="button" class="btn btn-primary">
