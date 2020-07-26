@@ -16,6 +16,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileEditComponent } from './profile-edit/profile-edit.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
