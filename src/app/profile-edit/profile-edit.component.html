@@ -43,37 +43,39 @@
           <i class="fa fa-coffee"></i>
           This is an important message.
         </div> -->
-        <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form-horizontal" role="form">
+          
+          <h3>Personal info</h3>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">Full name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="{{currentUser.username}}">
+              <input class="form-control" type="text" formControlName="username">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Location:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="{{currentUser.location}}">
+              <input class="form-control" type="text" formControlName="location">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Company:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="{{currentUser.company}}">
+              <input class="form-control" type="text" formControlName="company">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="{{currentUser.email}}">
+              <input class="form-control" type="text" formControlName="email">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Roles:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="{{currentUser.roles}}">
+              <input class="form-control" type="text" formControlName="roles">
             </div>
           </div>
           <div class="form-group">
@@ -106,13 +108,9 @@
               <input class="form-control" type="password" value="24061996">
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
-              <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
-            </div>
+          <div class="col-md-8">
+            <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-default">Cancel</button>
           </div>
         </form>
       </div>
