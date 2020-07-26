@@ -13,6 +13,7 @@ export class TokenStorageService {
     username: 'Vinh Phuc',
     location: 'Helsinki, Finland',
     email: 'phuc@ynwa.com',
+    company: 'Swift Responsible Efficient Solution',
     website: 'thvphuc246.github.io',
     birthday: '30.04.1975',
     image: '../assets/demo_profile.jpg',
