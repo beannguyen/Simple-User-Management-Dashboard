@@ -12,20 +12,22 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  image: string;
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
+    const user = this.tokenStorageService.getUser();
+    this.username = user.username;
+    this.image = user.image;
+    
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
-      this.username = user.username;
     }
   }
 

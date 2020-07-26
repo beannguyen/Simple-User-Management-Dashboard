@@ -38,7 +38,10 @@
     </ul> -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="profile">Profile</a>
+        <a class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <img src="{{ image }}" class="avatar img-circle" routerLink="profile" width="50" height="50" alt="avatar">
       </li>
     </ul>
   </nav>
