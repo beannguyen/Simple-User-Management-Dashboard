@@ -18,6 +18,11 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { ChatComponent } from './chat/chat.component';
+import { FeedComponent } from './feed/feed.component';
+import { MessageComponent } from './message/message.component';
+import { ChatFormComponent } from './chat-form/chat-form.component';
+import { AuthService } from './_services/auth.service';
+import { ChatService } from './_services/chat.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { ChatComponent } from './chat/chat.component';
     BoardModeratorComponent,
     BoardUserComponent,
     ProfileEditComponent,
-    ChatComponent
+    ChatComponent,
+    FeedComponent,
+    MessageComponent,
+    ChatFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,7 @@ import { ChatComponent } from './chat/chat.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, AuthService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
