@@ -2,3 +2,20 @@ html *
 {
     font-family: 'Inter', sans-serif;
 }
+
+app-chat {
+    display: flex;
+    flex-direction: column;
+}
+
+app-chat-form {
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow: none;
+}
+
+.message {
+    display: block;
+    height: auto;
+}
