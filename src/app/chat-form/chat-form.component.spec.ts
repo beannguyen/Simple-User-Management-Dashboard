@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ChatFormComponent } from './chat-form.component';
+import { ChatFormComponent } from "./chat-form.component";
 
-describe('ChatFormComponent', () => {
+describe("ChatFormComponent", () => {
   let component: ChatFormComponent;
   let fixture: ComponentFixture<ChatFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatFormComponent ]
-    })
-    .compileComponents();
+      declarations: [ChatFormComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ChatFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

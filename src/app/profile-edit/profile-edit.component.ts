@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from '../_services/token-storage.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { TokenStorageService } from "../_services/token-storage.service";
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: 'app-profile-edit',
-  templateUrl: './profile-edit.component.html',
-  styleUrls: ['./profile-edit.component.scss']
+  selector: "app-profile-edit",
+  templateUrl: "./profile-edit.component.html",
+  styleUrls: ["./profile-edit.component.scss"]
 })
 export class ProfileEditComponent implements OnInit {
-
   currentUser: any;
 
   profileForm = new FormGroup({
@@ -22,7 +21,7 @@ export class ProfileEditComponent implements OnInit {
     image: new FormControl(this.token.getUser().image)
   });
 
-  constructor(private token: TokenStorageService) { }
+  constructor(private token: TokenStorageService) {}
 
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
@@ -33,5 +32,4 @@ export class ProfileEditComponent implements OnInit {
     this.token.saveUser(this.profileForm.value);
     window.location.reload();
   }
-
 }

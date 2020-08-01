@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-board-moderator',
-  templateUrl: './board-moderator.component.html',
-  styleUrls: ['./board-moderator.component.scss']
+  selector: "app-board-moderator",
+  templateUrl: "./board-moderator.component.html",
+  styleUrls: ["./board-moderator.component.scss"]
 })
 export class BoardModeratorComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    //
   }
 
+  ngOnInit(): void {
+    //
+  }
 }
