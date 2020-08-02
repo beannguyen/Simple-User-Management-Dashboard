@@ -1,20 +1,20 @@
 @mixin box-shadow($shadow...) {
-    $result: ();
+  $result: ();
 
-    @if (length($shadow) == 1) {
-      // We can pass `@include box-shadow(none);`
-      $result: $shadow;
-    } @else {
-      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
-      @for $i from 1 through length($shadow) {
-        @if nth($shadow, $i) != "none" {
-          $result: append($result, nth($shadow, $i), "comma");
-        }
+  @if (length($shadow) == 1) {
+    // We can pass `@include box-shadow(none);`
+    $result: $shadow;
+  } @else {
+    // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+    @for $i from 1 through length($shadow) {
+      @if nth($shadow, $i) != "none" {
+        $result: append($result, nth($shadow, $i), "comma");
       }
     }
-    @if (length($result) > 0) {
-      box-shadow: $result;
-    }
+  }
+  @if (length($result) > 0) {
+    box-shadow: $result;
+  }
 }
 
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;

@@ -1,23 +1,42 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <img src="{{currentUser.image}}" alt="" class="img-rounded img-responsive" width = 500 height = 500/>
-                    </div>
-                    <div class="col-sm-6 col-md-8">
-                        <h1>{{ currentUser.username }}</h1>
-                        <small><cite title="location"> {{currentUser.location}} <i class="glyphicon glyphicon-map-marker">
-                        </i></cite></small>
-                        <p>
-                            <i class="glyphicon glyphicon-envelope"></i>{{ currentUser.email }}
-                            <br />
-                            <i class="glyphicon glyphicon-globe"></i><a href="http://{{ currentUser.website }}">{{ currentUser.website }}</a>
-                            <br />
-                            <i class="glyphicon glyphicon-gift"></i>{{ currentUser.birthday }}</p>
-                        <!-- Split button -->
-                        <!-- <div class="btn-group">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <img
+              src="{{ currentUser.image }}"
+              alt=""
+              class="img-rounded img-responsive"
+              width="500"
+              height="500"
+            />
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <h1>{{ currentUser.username }}</h1>
+            <small
+              ><cite title="location">
+                {{ currentUser.location }}
+                <i class="glyphicon glyphicon-map-marker"> </i></cite
+            ></small>
+            <p>
+              <i class="glyphicon glyphicon-envelope"></i
+              >{{ currentUser.email }}
+              <br />
+              <i class="glyphicon glyphicon-briefcase"></i
+              >{{ currentUser.company }}
+              <br />
+              <i class="glyphicon glyphicon-globe"></i
+              ><a href="http://{{ currentUser.website }}">{{
+                currentUser.website
+              }}</a>
+              <br />
+              <i class="glyphicon glyphicon-gift"></i>{{ currentUser.birthday }}
+              <br />
+              <i class="glyphicon glyphicon-user"></i>{{ currentUser.roles }}
+            </p>
+            <!-- Split button -->
+            <!-- <div class="btn-group">
                             <button type="button" class="btn btn-primary">
                                 Social</button>
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -31,9 +50,10 @@
                                 <li><a href="#">Github</a></li>
                             </ul>
                         </div> -->
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <a class="btn btn-primary btn-user btn-block" routerLink="../edit">EDIT</a>
 </div>

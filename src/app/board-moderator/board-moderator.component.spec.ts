@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BoardModeratorComponent } from './board-moderator.component';
+import { BoardModeratorComponent } from "./board-moderator.component";
 
-describe('BoardModeratorComponent', () => {
+describe("BoardModeratorComponent", () => {
   let component: BoardModeratorComponent;
   let fixture: ComponentFixture<BoardModeratorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoardModeratorComponent ]
-    })
-    .compileComponents();
+      declarations: [BoardModeratorComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('BoardModeratorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
