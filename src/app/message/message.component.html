@@ -1,4 +1,20 @@
-<div class="messageContainer">
+<div class="messageData"
+  [ngClass] = "{
+    'align-right': userName === 'Vinh Phuc',
+    'align-left': userName === 'Raiden Mei'
+  }">
+  <span class="timestamp" >{{ timeStamp | date: "medium" }}</span>
+  <span class="sender" >{{ userName }}</span> <i class="fa fa-circle me"></i> 
+</div>
+<div class="messageContent"
+  [ngClass] = "{
+    'myMessage': userName === 'Vinh Phuc',
+    'otherMessage': userName === 'Raiden Mei'
+  }">
+  {{ messageContent }}
+</div>
+
+<!-- <div class="messageContainer">
   <div class="messageData">
     <span class="sender">
       {{ userName }}
@@ -10,4 +26,4 @@
   <div class="messageContent">
     {{ messageContent }}
   </div>
-</div>
+</div> -->
