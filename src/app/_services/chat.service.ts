@@ -31,7 +31,7 @@ export class ChatService {
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     let username = "Vinh Phuc";
-    if (this.count % 2 != 0) username = "Mei";
+    if (this.count % 2 != 0) username = "Raiden Mei";
     this.chatMessages.push({
       message: msg,
       timeSent: new Date(timestamp),
