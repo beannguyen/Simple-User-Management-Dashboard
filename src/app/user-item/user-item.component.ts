@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from "../_models/user.model";
+import { ChatService } from '../_services/chat.service';
 
 @Component({
   selector: 'app-user-item',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-item.component.scss']
 })
 export class UserItemComponent implements OnInit {
+  @Input() user: User;
 
   constructor() { }
 
