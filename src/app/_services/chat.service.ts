@@ -7,6 +7,29 @@ import { User } from "../_models/user.model";
 @Injectable()
 export class ChatService {
   user: User = this.getUser();
+  users: Array<User> = [
+    this.token.getUser(),
+    {
+      username: "Vinh Phuc",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/demo_profile.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Vinh Phuc",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/demo_profile.jpg",
+      roles: "Android Developer"
+    }
+  ];
   chatMessage: ChatMessage;
   chatMessages: Array<ChatMessage> = [
     {
@@ -43,6 +66,10 @@ export class ChatService {
 
   getUser() {
     return this.token.getUser();
+  }
+
+  getUsers() {
+    return this.users;
   }
 
   getMessages() {
