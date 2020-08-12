@@ -5,11 +5,10 @@
     margin-top: 10px;
     border-radius: 1px;
     align-items:flex-start;
-    background-color: #201835;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     color: #A098A5;
     border-radius: 8px;
     transition: ease-in 0.2s;
+    position: relative;
 }
 
 .clearfix:after {
@@ -25,6 +24,10 @@
     background-color: #453968;
     color: #ddd;
     transition: ease-in 0.1s;
+}
+
+.meta {
+    padding: 5px 0 0 0;
 }
 
 .online{
@@ -50,4 +53,24 @@
 
 .userName{
     display: inline-block;
+}
+
+img {
+    width: 70px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.userMessage {
+    margin: 5px 0 0 0;
+    padding: 0 0 1px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -moz-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    -webkit-transition: 1s all ease;
+    transition: 1s all ease;
 }
