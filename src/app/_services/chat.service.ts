@@ -7,30 +7,8 @@ import { User } from "../_models/user.model";
 @Injectable()
 export class ChatService {
   user: User = this.getUser();
-  users: Array<User> = [
-    this.token.getUser(),
-    {
-      username: "Vinh Phuc",
-      location: "Helsinki, Finland",
-      email: "phuc@ynwa.com",
-      company: "Swift Responsible Efficient Solution",
-      website: "thvphuc246.github.io",
-      birthday: "30.04.1975",
-      image: "../assets/demo_profile.jpg",
-      roles: "Android Developer"
-    },
-    {
-      username: "Vinh Phuc",
-      location: "Helsinki, Finland",
-      email: "phuc@ynwa.com",
-      company: "Swift Responsible Efficient Solution",
-      website: "thvphuc246.github.io",
-      birthday: "30.04.1975",
-      image: "../assets/demo_profile.jpg",
-      roles: "Android Developer"
-    }
-  ];
-  chatMessage: ChatMessage;
+  users: Array<User> = this.getUsers();
+
   chatMessages: Array<ChatMessage> = [
     {
       email: "phuc@ynwa.com",
@@ -42,6 +20,42 @@ export class ChatService {
       email: "abcde@ynwa.com",
       userName: "Raiden Mei",
       message: "Hi Darling!",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "phuc@ynwa.com",
+      userName: "Vinh Phuc",
+      message: "Can I tell you something?",
+      timeSent: new Date("1968-11-16T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "What is it?",
+      timeSent: new Date("1968-11-16T00:00:00")
+    },
+    {
+      email: "phuc@ynwa.com",
+      userName: "Vinh Phuc",
+      message: "I love you!",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "...",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "Erm... I mean, it's not that I like you or anything...",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "B... Baka!",
       timeSent: new Date("1975-04-30T00:00:00")
     }
   ];
@@ -69,7 +83,7 @@ export class ChatService {
   }
 
   getUsers() {
-    return this.users;
+    return this.token.getUsers();
   }
 
   getMessages() {
