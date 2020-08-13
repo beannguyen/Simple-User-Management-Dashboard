@@ -8,16 +8,68 @@ const USER_KEY = "auth-user";
   providedIn: "root"
 })
 export class TokenStorageService {
-  demoUser: User = {
-    username: "Vinh Phuc",
-    location: "Helsinki, Finland",
-    email: "phuc@ynwa.com",
-    company: "Swift Responsible Efficient Solution",
-    website: "thvphuc246.github.io",
-    birthday: "30.04.1975",
-    image: "../assets/demo_profile.jpg",
-    roles: "Android Developer"
-  };
+  demoUsers: Array<User> = [
+    {
+      username: "Vinh Phuc",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/profile_picture.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Raiden Mei",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/mei.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Kiana Kaslana",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/kiana.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Bronya Zaychik",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/bronya.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Seele Vooleirei",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/seele.jpg",
+      roles: "Android Developer"
+    },
+    {
+      username: "Bianca Durandal",
+      location: "Helsinki, Finland",
+      email: "phuc@ynwa.com",
+      company: "Swift Responsible Efficient Solution",
+      website: "thvphuc246.github.io",
+      birthday: "30.04.1975",
+      image: "../assets/durandal.jpg",
+      roles: "Android Developer"
+    }
+  ];
 
   constructor() {
     //
@@ -44,6 +96,10 @@ export class TokenStorageService {
   public getUser(): any {
     const res = JSON.parse(sessionStorage.getItem(USER_KEY));
     if (res) return res;
-    else return this.demoUser;
+    else return this.demoUsers[0];
+  }
+
+  public getUsers(): any {
+    return this.demoUsers;
   }
 }
