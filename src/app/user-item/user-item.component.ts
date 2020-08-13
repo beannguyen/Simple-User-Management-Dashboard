@@ -13,5 +13,4 @@ export class UserItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
