@@ -23,8 +23,8 @@ import { MessageComponent } from "./message/message.component";
 import { ChatFormComponent } from "./chat-form/chat-form.component";
 import { AuthService } from "./_services/auth.service";
 import { ChatService } from "./_services/chat.service";
-import { UserListComponent } from './user-list/user-list.component';
-import { UserItemComponent } from './user-item/user-item.component';
+import { UserListComponent } from "./user-list/user-list.component";
+import { UserItemComponent } from "./user-item/user-item.component";
 
 @NgModule({
   declarations: [
