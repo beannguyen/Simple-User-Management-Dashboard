@@ -1,0 +1,16 @@
+@import "variables", "hover", "shadows", "buttons", "functions", "gradients";
+
+.container {
+    margin: 0 auto;
+    width: 750px;
+    height: 700px;
+    background: white;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-radius: 5px;
+}
+
+.userList {
+    width: 350px;
+    float: left;
+}

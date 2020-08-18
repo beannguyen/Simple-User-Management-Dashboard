@@ -7,7 +7,8 @@ import { User } from "../_models/user.model";
 @Injectable()
 export class ChatService {
   user: User = this.getUser();
-  chatMessage: ChatMessage;
+  users: Array<User> = this.getUsers();
+
   chatMessages: Array<ChatMessage> = [
     {
       email: "phuc@ynwa.com",
@@ -20,6 +21,42 @@ export class ChatService {
       userName: "Raiden Mei",
       message: "Hi Darling!",
       timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "phuc@ynwa.com",
+      userName: "Vinh Phuc",
+      message: "Can I tell you something?",
+      timeSent: new Date("1968-11-16T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "What is it?",
+      timeSent: new Date("1968-11-16T00:00:00")
+    },
+    {
+      email: "phuc@ynwa.com",
+      userName: "Vinh Phuc",
+      message: "I love you!",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "...",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "Erm... I mean, it's not that I like you or anything...",
+      timeSent: new Date("1975-04-30T00:00:00")
+    },
+    {
+      email: "abcde@ynwa.com",
+      userName: "Raiden Mei",
+      message: "B... Baka!",
+      timeSent: new Date("1975-04-30T00:00:00")
     }
   ];
 
@@ -31,7 +68,7 @@ export class ChatService {
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     let username = "Vinh Phuc";
-    if (this.count % 2 != 0) username = "Mei";
+    if (this.count % 2 != 0) username = "Raiden Mei";
     this.chatMessages.push({
       message: msg,
       timeSent: new Date(timestamp),
@@ -43,6 +80,10 @@ export class ChatService {
 
   getUser() {
     return this.token.getUser();
+  }
+
+  getUsers() {
+    return this.token.getUsers();
   }
 
   getMessages() {

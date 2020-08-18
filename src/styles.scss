@@ -2,6 +2,10 @@ html * {
   font-family: "Inter", sans-serif;
 }
 
+h1 {
+  font-weight: 1000;
+}
+
 app-chat {
   display: flex;
   flex-direction: column;

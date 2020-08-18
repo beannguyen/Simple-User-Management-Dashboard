@@ -1,13 +1,18 @@
-<div class="messageContainer">
-  <div class="messageData">
-    <span class="sender">
-      {{ userName }}
-    </span>
-    <span class="timestamp">
-      {{ timeStamp | date: "medium" }}
-    </span>
-  </div>
-  <div class="messageContent">
-    {{ messageContent }}
-  </div>
+<div
+  class="messageContent"
+  [ngClass]="{
+    'align-right myMessage': userName === 'Vinh Phuc',
+    'align-left otherMessage': userName === 'Raiden Mei'
+  }"
+>
+  {{ messageContent }}
+</div>
+<div
+  class="messageData"
+  [ngClass]="{
+    'align-right': userName === 'Vinh Phuc',
+    'align-left': userName === 'Raiden Mei'
+  }"
+>
+  <span class="timestamp">{{ timeStamp | date: "medium" }}</span>
 </div>

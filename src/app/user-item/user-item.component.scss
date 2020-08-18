@@ -1,0 +1,72 @@
+.userItem{
+    height: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 1px;
+    align-items: flex-start;
+    color: #A098A5;
+    border-bottom-style: solid;
+    border-width: 1px;
+    transition: ease-in 0.2s;
+    position: relative;
+}
+
+.userItem:hover{
+    background-color: #453968;
+    border-radius: 8px;
+    color: #ddd;
+    transition: ease-in 0.1s;
+}
+
+.meta {
+    position: relative;
+}
+
+.online{
+    background-color: #0FA;
+}
+
+.busy{
+    background-color: #FB0;
+}
+
+.offline{
+    background-color: #888;
+}
+
+.status{
+    border: 1px solid black;
+    display: inline-block;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 50%;
+    margin: 10px 12px 0px 10px;
+}
+
+.userName{
+    font-size: 1.3em;
+    font-weight: 800;
+    margin: auto;
+    display: inline-block;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.userMessage {
+    margin: 0 0 0 0;
+    padding: 0 0 1px;
+    font-size: 1.0em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -moz-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    -webkit-transition: 1s all ease;
+    transition: 1s all ease;
+}

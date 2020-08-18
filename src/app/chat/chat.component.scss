@@ -2,19 +2,19 @@
   display: flex;
 }
 
+.chatHeaderWrapper {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 .feedWrapper {
   font-size: 1.2em;
   flex: 5;
   order: 2;
+  height: 500px;
   overflow-y: scroll;
-  padding: 20px 0px 0px 24px;
+  padding: 20px;
   background-color: #fff;
-  background: linear-gradient(
-      180deg,
-      rgba(100, 200, 255, 0.6),
-      rgba(0, 0, 0, 0.9)
-    )
-    center center no-repeat;
 }
 
 .chatFormWrapper {
