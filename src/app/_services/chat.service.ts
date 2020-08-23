@@ -64,33 +64,35 @@ export class ChatService {
 
   constructor(private token: TokenStorageService) {}
 
-  sendMessage(msg: string) {
+  sendMessage(msg: string): void {
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     let username = "Vinh Phuc";
-    if (this.count % 2 != 0) username = "Raiden Mei";
+    if (this.count % 2 !== 0) {
+      username = "Raiden Mei";
+    }
     this.chatMessages.push({
-      message: msg,
-      timeSent: new Date(timestamp),
+      email: "{email}",
       userName: username,
-      email: email
+      message: msg,
+      timeSent: new Date(timestamp)
     });
     this.count++;
   }
 
-  getUser() {
+  getUser(): User {
     return this.token.getUser();
   }
 
-  getUsers() {
+  getUsers(): Array<User> {
     return this.token.getUsers();
   }
 
-  getMessages() {
+  getMessages(): Array<ChatMessage> {
     return this.chatMessages;
   }
 
-  getTimeStamp() {
+  getTimeStamp(): string {
     const now = new Date();
     const date =
       now.getUTCFullYear() +

@@ -27,7 +27,7 @@ export class ProfileEditComponent implements OnInit {
     this.currentUser = this.token.getUser();
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.profileForm.value);
     this.token.saveUser(this.profileForm.value);
     window.location.reload();

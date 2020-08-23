@@ -95,8 +95,12 @@ export class TokenStorageService {
 
   public getUser(): any {
     const res = JSON.parse(sessionStorage.getItem(USER_KEY));
-    if (res) return res;
-    else return this.demoUsers[0];
+    if (res) {
+      return res;
+    }
+    else {
+      return this.demoUsers[0];
+    }
   }
 
   public getUsers(): any {

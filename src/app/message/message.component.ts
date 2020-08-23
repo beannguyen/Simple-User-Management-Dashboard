@@ -27,8 +27,8 @@ export class MessageComponent implements OnInit, AfterViewInit {
     this.userName = chatMessage.userName;
   }
 
-  ngAfterViewInit() {         
-    this.container = document.getElementById("msgContainer");           
+  ngAfterViewInit(): void {
+    this.container = document.getElementById("msgContainer");
     this.container.scrollTop = this.container.scrollHeight;
-  } 
+  }
 }
