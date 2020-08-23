@@ -1,18 +1,5 @@
 @import "variables", "hover", "shadows", "buttons", "functions", "gradients";
 
-.messageContainer {
-  display: flex;
-  width: 70%;
-  min-width: 200px;
-  height: auto;
-  border-radius: 10px;
-  align-items: stretch;
-}
-
-.isOwnMessageContainer {
-  background-color: #01579b;
-}
-
 .messageData {
   font-size: 0.5em;
   margin: 0 10px;
