@@ -30,6 +30,5 @@ export class MessageComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {         
     this.container = document.getElementById("msgContainer");           
     this.container.scrollTop = this.container.scrollHeight;
-    console.log("ping")     
   } 
 }
