@@ -9,7 +9,11 @@ import { User } from "../_models/user.model";
 export class UserItemComponent implements OnInit {
   @Input() user: User;
 
-  constructor() {}
+  constructor() {
+    //
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //
+  }
 }

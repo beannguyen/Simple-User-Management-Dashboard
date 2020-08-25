@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { ChatMessage } from "../_models/chat-message.model";
-import { AuthService } from "../_services/auth.service";
 import { TokenStorageService } from "./token-storage.service";
 import { User } from "../_models/user.model";
 
@@ -72,7 +71,7 @@ export class ChatService {
       username = "Raiden Mei";
     }
     this.chatMessages.push({
-      email: "{email}",
+      email,
       userName: username,
       message: msg,
       timeSent: new Date(timestamp)

@@ -14,5 +14,7 @@ export class UserListComponent implements OnInit {
     this.users = chat.getUsers();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //
+  }
 }

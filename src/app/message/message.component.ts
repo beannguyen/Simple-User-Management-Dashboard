@@ -1,6 +1,4 @@
 import { Component, OnInit, AfterViewInit, Input } from "@angular/core";
-import { ChatService } from "../_services/chat.service";
-import { AuthService } from "../_services/auth.service";
 import { ChatMessage } from "../_models/chat-message.model";
 
 @Component({
