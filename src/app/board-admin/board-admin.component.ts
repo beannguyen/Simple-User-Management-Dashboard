@@ -7,7 +7,7 @@ import { UserService } from "../_services/user.service";
   styleUrls: ["./board-admin.component.scss"]
 })
 export class BoardAdminComponent implements OnInit {
-  content: string;
+  content: unknown;
 
   constructor(private userService: UserService) {}
 
