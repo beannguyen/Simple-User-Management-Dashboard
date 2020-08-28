@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { ChatMessage } from "../_models/chat-message.model";
+import { ChatMessage } from "@app/_models/chat-message.model";
 import { TokenStorageService } from "./token-storage.service";
-import { User } from "../_models/user.model";
+import { User } from "@app/_models/user.model";
 
 @Injectable()
 export class ChatService {
