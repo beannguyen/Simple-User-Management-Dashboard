@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../_services/user.service";
+import { UserService } from "@app/_services/user.service";
 
 @Component({
   selector: "app-board-admin",
@@ -7,7 +7,7 @@ import { UserService } from "../_services/user.service";
   styleUrls: ["./board-admin.component.scss"]
 })
 export class BoardAdminComponent implements OnInit {
-  content: string;
+  content: unknown;
 
   constructor(private userService: UserService) {}
 

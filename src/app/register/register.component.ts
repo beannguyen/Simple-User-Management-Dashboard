@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../_services/auth.service";
+import { AuthService } from "@app/_services/auth.service";
 
 @Component({
   selector: "app-register",
@@ -7,7 +7,7 @@ import { AuthService } from "../_services/auth.service";
   styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
-  form: any = {};
+  form: unknown;
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = "";
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.authService.register(this.form).subscribe(
+    /* this.authService.register(this.form).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
@@ -29,6 +29,6 @@ export class RegisterComponent implements OnInit {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
-    );
+    ); */
   }
 }

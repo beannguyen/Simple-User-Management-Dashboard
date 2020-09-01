@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { TokenStorageService } from "../_services/token-storage.service";
+import { TokenStorageService } from "@app/_services/token-storage.service";
 import { FormControl, FormGroup } from "@angular/forms";
+import { User } from "@app/_models/user.model";
 
 @Component({
   selector: "app-profile-edit",
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./profile-edit.component.scss"]
 })
 export class ProfileEditComponent implements OnInit {
-  currentUser: any;
+  currentUser: User;
 
   profileForm = new FormGroup({
     username: new FormControl(this.token.getUser().username),
@@ -27,8 +28,7 @@ export class ProfileEditComponent implements OnInit {
     this.currentUser = this.token.getUser();
   }
 
-  onSubmit() {
-    console.log(this.profileForm.value);
+  onSubmit(): void {
     this.token.saveUser(this.profileForm.value);
     window.location.reload();
   }

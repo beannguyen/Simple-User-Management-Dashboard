@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { User } from "../_models/user.model";
-import { ChatService } from "../_services/chat.service";
+import { User } from "@app/_models/user.model";
+import { ChatService } from "@app/_services/chat.service";
 
 @Component({
   selector: "app-user-list",
@@ -14,5 +14,7 @@ export class UserListComponent implements OnInit {
     this.users = chat.getUsers();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //
+  }
 }
