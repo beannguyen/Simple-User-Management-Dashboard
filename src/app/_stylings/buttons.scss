@@ -166,14 +166,7 @@
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
+  @include button-variant($blue, $white);
 }
 
 .btn-google {
@@ -182,4 +175,9 @@
 
 .btn-facebook {
   @include button-variant($brand-facebook, $white);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
