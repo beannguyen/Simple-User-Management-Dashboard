@@ -1,4 +1,4 @@
-@import "variables", "hover", "shadows", "buttons", "functions", "gradients";
+@import "hover", "shadows", "buttons", "functions", "gradients";
 
 .bg-register-image {
   background: url("../../assets/register_bg.png");
@@ -6,10 +6,19 @@
   background-size: cover;
 }
 
-.btn-google {
-  @include button-variant($brand-google, $white);
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  margin: 3rem auto;
 }
 
-.btn-facebook {
-  @include button-variant($brand-facebook, $white);
+.card-body {
+  padding: 0!important;
+  flex: 1 1 auto;
+  min-height: 1px;
 }
