@@ -65,10 +65,7 @@ router-outlet {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 3rem auto;
 }
 
 @media (min-width: 576px) {
@@ -97,6 +94,6 @@ router-outlet {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1300px;
+    max-width: 95%;
   }
 }
