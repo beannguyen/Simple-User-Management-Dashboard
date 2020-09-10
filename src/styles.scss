@@ -10,6 +10,10 @@ app-chat-form {
   overflow: none;
 }
 
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 html * {
   margin: 0;
   text-align: left;
@@ -19,6 +23,7 @@ html * {
 
 h1 {
   font-weight: 1000;
+  font-size: 4rem;
 }
 
 a {
@@ -76,6 +81,87 @@ ul {
   margin-left: auto !important;
 }
 
-*, ::after, ::before {
-  box-sizing: border-box;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+//Global DISPLAY styles
+.d-none {
+  display: none!important;
+}
+
+@media (min-width: 992px) {
+  .d-lg-block {
+    display: block!important;
+  }
+}
+
+//Global PADDING styles
+.p-5 {
+  padding: 3rem!important;
+}
+
+//Global TEXT ALLIGN
+.text-center {
+  text-align: center!important;
+}
+
+//Forms
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+//Global COLUMNS styles
+@media (min-width: 992px) {
+  .col-lg-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .col-lg-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .mb-sm-0 {
+    margin-bottom: 0!important;
+  }
+}
+
+.mb-3 {
+  margin-bottom: 1rem!important;
+}
+
+.col-lg-5, .col-lg-7, .col-sm-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
