@@ -1,3 +1,5 @@
+@import "configs";
+
 router-outlet {
   height: 0;
 }
@@ -54,11 +56,8 @@ router-outlet {
 .nav-item {
   display: inline-block;
   margin-bottom: -1px;
-  flex: 1 1 auto;
   text-align: center;
-  -ms-flex: 1 1 auto;
-  -ms-flex-preferred-size: 0;
-  -ms-flex-positive: 1;
+  @include flex(1, 1, auto);
 }
 
 .container {
