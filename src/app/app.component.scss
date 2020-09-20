@@ -54,8 +54,6 @@ router-outlet {
 .nav-item {
   display: inline-block;
   margin-bottom: -1px;
-  flex-basis: 0;
-  flex-grow: 1;
   flex: 1 1 auto;
   text-align: center;
   -ms-flex: 1 1 auto;
