@@ -2,7 +2,7 @@
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-@import "gradients", "functions";
+@import "configs", "gradients", "functions";
 
 @mixin button-variant(
   $background,
@@ -152,10 +152,6 @@
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
   padding: .375rem .75rem;
@@ -163,6 +159,7 @@
   line-height: 1.5;
   border-radius: 10rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  @include user-select;
 }
 
 .btn-primary {
