@@ -1,4 +1,4 @@
-@import "hover", "shadows", "buttons", "functions", "gradients";
+@import "configs", "hover", "shadows", "buttons", "functions", "gradients";
 
 .bg-register-image {
   background: url("../../assets/register_bg.png");
@@ -30,10 +30,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   text-align: center;
+  @include transform();
 }
 
 .card {
