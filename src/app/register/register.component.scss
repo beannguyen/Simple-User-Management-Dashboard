@@ -35,9 +35,8 @@
 }
 
 .card {
+  @include flex-column-display;
   position: relative;
-  display: flex;
-  flex-direction: column;
   min-width: 0;
   background-color: #fff;
   background-clip: border-box;
