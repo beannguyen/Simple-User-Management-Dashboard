@@ -61,7 +61,7 @@ ul {
 
 .nav {
   @include mx-flex-display;
-  @include flex-wrap(wrap);
+  @include mx-flex-wrap(wrap);
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;

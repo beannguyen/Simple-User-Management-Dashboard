@@ -19,17 +19,6 @@
     -ms-flex-positive: 1;
 }
 
-@mixin flex-wrap($value: nowrap) {
-    // No Webkit/FF Box fallback.
-    -webkit-flex-wrap: $value;
-    @if $value == nowrap {
-      -ms-flex-wrap: none;
-    } @else {
-      -ms-flex-wrap: $value;
-    }
-    flex-wrap: $value;
-}
-
 @mixin mx-flex-display {
     display: -webkit-box;
     display: -moz-box;
@@ -63,4 +52,15 @@
     -webkit-flex-direction: $direction;
         -ms-flex-direction: $direction;
             flex-direction: $direction;
+}
+
+@mixin mx-flex-wrap($value: nowrap) {
+    // No Webkit/FF Box fallback.
+    -webkit-flex-wrap: $value;
+    @if $value == nowrap {
+      -ms-flex-wrap: none;
+    } @else {
+      -ms-flex-wrap: $value;
+    }
+    flex-wrap: $value;
 }
