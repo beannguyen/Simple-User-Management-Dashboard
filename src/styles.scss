@@ -43,9 +43,8 @@ ul {
 }
 
 .carousel-indicators li {
+  @include flex(0, 1, auto);
   box-sizing: content-box;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
   width: 30px;
   height: 3px;
   margin-right: 3px;
@@ -61,10 +60,8 @@ ul {
 }
 
 .nav {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  @include mx-flex-display;
+  @include flex-wrap(wrap);
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
@@ -202,8 +199,7 @@ form.user {
 
 @media (min-width: 576px) {
   .col-sm-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
+    @include flex(0, 0, 50%);
     max-width: 50%;
   }
 
