@@ -1,7 +1,7 @@
-@mixin transform {
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+@mixin transform($val) {
+    -webkit-transform: translate($val, $val);
+        -ms-transform: translate($val, $val);
+            transform: translate($val, $val);
 }
 
 @mixin user-select($val: none) {
