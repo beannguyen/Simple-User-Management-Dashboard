@@ -1,10 +1,12 @@
 @import "configs";
 
 .feed {
-  @include flex-column-display;
+  @include mx-flex-display;
+  @include mx-flex-direction(column);
 }
 
 .message {
-  @include flex-column-display;
+  @include mx-flex-display;
+  @include mx-flex-direction(column);
   margin: 10px 10px;
 }

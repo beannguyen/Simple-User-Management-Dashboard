@@ -35,7 +35,8 @@
 }
 
 .card {
-  @include flex-column-display;
+  @include mx-flex-display;
+  @include mx-flex-direction(column);
   position: relative;
   min-width: 0;
   background-color: #fff;

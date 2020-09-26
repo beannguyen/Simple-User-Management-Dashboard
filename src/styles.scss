@@ -1,7 +1,8 @@
 @import "configs";
 
 app-chat {
-  @include flex-column-display;
+  @include mx-flex-display;
+  @include mx-flex-direction(column);
 }
 
 app-chat-form {
