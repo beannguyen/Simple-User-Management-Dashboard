@@ -5,14 +5,14 @@ router-outlet {
 }
 
 .navbar {
+  @include mx-flex-display;
+  @include align-items(center);
   position: relative;
-  display: flex;
-  align-items: center;
   padding: 0.5rem 1rem;
 }
 
 .navbar-expand {
-  flex-flow: row nowrap;
+  @include flex-flow(row nowrap);
   justify-content: flex-start;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
@@ -38,8 +38,8 @@ router-outlet {
 }
 
 .navbar-nav {
+  @include mx-flex-display;
   color: rgba(255,255,255,.5);
-  display: flex;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;

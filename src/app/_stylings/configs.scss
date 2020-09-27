@@ -1,3 +1,21 @@
+@mixin align-items($value: stretch) {
+    @if $value == flex-start {
+      -webkit-box-align: start;
+         -moz-box-align: start;
+         -ms-flex-align: start;
+    } @else if $value == flex-end {
+      -webkit-box-align: end;
+         -moz-box-align: end;
+         -ms-flex-align: end;
+    } @else {
+      -webkit-box-align: $value;
+         -moz-box-align: $value;
+         -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+            align-items: $value;
+}
+
 @mixin transform($val) {
     -webkit-transform: translate($val, $val);
         -ms-transform: translate($val, $val);
@@ -25,6 +43,12 @@
     -ms-flex: $flex-grow $flex-shrink $flex-basis;
      -ms-flex-preferred-size: 0;
     -ms-flex-positive: 1;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+    -webkit-flex-flow: $values;
+        -ms-flex-flow: $values;
+            flex-flow: $values;
 }
 
 @mixin mx-flex-display {
@@ -63,7 +87,6 @@
 }
 
 @mixin mx-flex-wrap($value: nowrap) {
-    // No Webkit/FF Box fallback.
     -webkit-flex-wrap: $value;
     @if $value == nowrap {
       -ms-flex-wrap: none;
