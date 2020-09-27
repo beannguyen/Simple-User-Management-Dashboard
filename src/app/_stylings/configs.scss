@@ -4,6 +4,14 @@
             transform: translate($val, $val);
 }
 
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+
 @mixin user-select($val: none) {
     -webkit-user-select: $val;
     -moz-user-select: $val;
