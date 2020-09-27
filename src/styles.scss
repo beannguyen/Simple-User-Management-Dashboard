@@ -6,8 +6,8 @@ app-chat {
 }
 
 app-chat-form {
+  @include mx-flex-display;
   width: 100%;
-  display: flex;
   white-space: nowrap;
   overflow: none;
 }
