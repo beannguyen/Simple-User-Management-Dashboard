@@ -41,7 +41,7 @@
 @mixin flex($flex-grow, $flex-shrink, $flex-basis) {
     flex: $flex-grow $flex-shrink $flex-basis;
     -ms-flex: $flex-grow $flex-shrink $flex-basis;
-     -ms-flex-preferred-size: 0;
+    -ms-flex-preferred-size: 0;
     -ms-flex-positive: 1;
 }
 
