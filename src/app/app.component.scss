@@ -13,7 +13,7 @@ router-outlet {
 
 .navbar-expand {
   @include flex-flow(row nowrap);
-  justify-content: flex-start;
+  @include justify-content(flex-start);
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
