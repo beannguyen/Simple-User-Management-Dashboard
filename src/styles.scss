@@ -76,7 +76,7 @@ ul {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  align-items: center;
+  @include align-items(center);
   justify-content: center;
 }
 
