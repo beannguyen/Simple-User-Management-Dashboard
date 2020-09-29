@@ -131,8 +131,8 @@ form.user {
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
+  @include mx-flex-display;
+  @include mx-flex-wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
