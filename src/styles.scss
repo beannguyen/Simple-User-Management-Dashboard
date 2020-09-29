@@ -43,7 +43,7 @@ ul {
 }
 
 .carousel-indicators li {
-  @include flex(0, 1, auto);
+  @include mx-flex(0, 1, auto);
   box-sizing: content-box;
   width: 30px;
   height: 3px;
@@ -182,24 +182,24 @@ form.user {
 //Global COLUMNS styles
 @media (min-width: 992px) {
   .col-lg-5 {
-    @include flex(0, 0, 41.666667%);
+    @include mx-flex(0, 0, 41.666667%);
     max-width: 41.666667%;
   }
 
   .col-lg-6 {
-    @include flex(0, 0, 50%);
+    @include mx-flex(0, 0, 50%);
     max-width: 50%;
   }
 
   .col-lg-7 {
-    @include flex(0, 0, 58.333333%);
+    @include mx-flex(0, 0, 58.333333%);
     max-width: 58.333333%;
   }
 }
 
 @media (min-width: 576px) {
   .col-sm-6 {
-    @include flex(0, 0, 50%);
+    @include mx-flex(0, 0, 50%);
     max-width: 50%;
   }
 

@@ -57,7 +57,7 @@ router-outlet {
   display: inline-block;
   margin-bottom: -1px;
   text-align: center;
-  @include flex(1, 1, auto);
+  @include mx-flex(1, 1, auto);
 }
 
 .container {
