@@ -1,4 +1,4 @@
-@import "variables", "hover", "shadows", "buttons", "functions", "gradients";
+@import "configs", "hover", "shadows", "buttons", "functions", "gradients";
 
 .bg-register-image {
   background: url("../../assets/register_bg.png");
@@ -6,10 +6,46 @@
   background-size: cover;
 }
 
-.btn-google {
-  @include button-variant($brand-google, $white);
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  opacity: 50%;
+  @include transition(.5s ease);
 }
 
-.btn-facebook {
-  @include button-variant($brand-facebook, $white);
+.bg-register-image:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  @include transform(-50%);
+}
+
+.card {
+  @include mx-flex-display;
+  @include mx-flex-direction(column);
+  position: relative;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  @include mx-flex(1, 1, auto);
+  padding: 0!important;
+  min-height: 1px;
 }

@@ -2,6 +2,7 @@
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
+@import "configs", "gradients", "functions";
 
 @mixin button-variant(
   $background,
@@ -34,11 +35,10 @@
       );
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: 0
-        0
-        0
-        0.2rem
-        rgba(mix(color-yiq($background), $border, 15%), 0.5);
+      @include box-shadow(
+        false, 
+        0 0 0 0.2rem rgba(mix(color-yiq($background), $border, 15%), 0.5)
+      );
     }
   }
 
@@ -72,11 +72,10 @@
         );
       } @else {
         // Avoid using mixin so we can pass custom focus shadow properly
-        box-shadow: 0
-          0
-          0
-          0.2rem
-          rgba(mix(color-yiq($background), $border, 15%), 0.5);
+        @include box-shadow(
+          false,
+          0 0 0 0.2rem rgba(mix(color-yiq($background), $border, 15%), 0.5)
+        );
       }
     }
   }
@@ -99,7 +98,10 @@
 
   &:focus,
   &.focus {
-    box-shadow: 0 0 0 0.2rem rgba($color, 0.5);
+    @include box-shadow(
+      false,
+      0 0 0 0.2rem rgba($color, 0.5)
+    );
   }
 
   &.disabled,
@@ -123,7 +125,10 @@
         );
       } @else {
         // Avoid using mixin so we can pass custom focus shadow properly
-        box-shadow: 0 0 0 0.2rem rgba($color, 0.5);
+        @include box-shadow(
+          false,
+          0 0 0 0.2rem rgba($color, 0.5)
+        );
       }
     }
   }
@@ -142,4 +147,38 @@
   line-height: $line-height;
   // Manually declare to provide an override to the browser default
   @include border-radius($border-radius, 0);
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 10rem;
+  @include transition(color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out);
+  @include user-select;
+}
+
+.btn-primary {
+  @include button-variant($blue, $white);
+}
+
+.btn-google {
+  @include button-variant($brand-google, $white);
+}
+
+.btn-facebook {
+  @include button-variant($brand-facebook, $white);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }

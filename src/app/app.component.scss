@@ -1,3 +1,96 @@
+@import "configs";
+
 router-outlet {
   height: 0;
+}
+
+.navbar {
+  @include mx-flex-display;
+  @include align-items(center);
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-expand {
+  @include flex-flow(row nowrap);
+  @include justify-content(flex-start);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand:focus,
+.navbar-dark .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-nav {
+  @include mx-flex-display;
+  color: rgba(255,255,255,.5);
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  position: static;
+  float: none;
+}
+
+.nav-link {
+  color: rgba(255,255,255,.5);
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-bottom: -1px;
+  text-align: center;
+  @include mx-flex(1, 1, auto);
+}
+
+.container {
+  width: 100%;
+  margin: 3rem auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
 }
