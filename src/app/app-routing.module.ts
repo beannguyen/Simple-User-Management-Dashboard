@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from "./board-moderator/board-moderator.compo
 import { BoardAdminComponent } from "./board-admin/board-admin.component";
 import { ProfileEditComponent } from "./profile-edit/profile-edit.component";
 import { ChatComponent } from "./chat/chat.component";
+import { VideoCallComponent } from "./video-call/video-call.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "admin", component: BoardAdminComponent },
   { path: "edit", component: ProfileEditComponent },
   { path: "chat", component: ChatComponent },
+  { path: "video-call", component: VideoCallComponent },
   { path: "", redirectTo: "home", pathMatch: "full" }
 ];
 
